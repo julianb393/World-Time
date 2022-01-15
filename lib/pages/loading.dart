@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 
 class Loading extends StatefulWidget {
   const Loading({Key? key}) : super(key: key);
@@ -9,17 +12,10 @@ class Loading extends StatefulWidget {
 
 class _LoadingState extends State<Loading> {
   void getData() async {
-    // Simulate a network request for a username
-    String username = await Future.delayed(const Duration(seconds: 3), () {
-      return 'yoshi';
-    });
-
-    // Simulate a network request to get bio of the username
-    String bio = await Future.delayed(const Duration(seconds: 2), () {
-      return 'vegan, musician & egg collector';
-    });
-
-    print('$username - $bio');
+    Response response =
+        await get(Uri.parse('https://jsonplaceholder.typicode.com/todos/1'));
+    Map data = jsonDecode(response.body);
+    print(data['title']);
   }
 
   @override
