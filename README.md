@@ -4,7 +4,7 @@ A Flutter project that allows users to view the local time of various cities.
 
 ## Getting Started
 
-On startup, the app loads the world time of the current default city Berlin. This project makes use of the [Wolrd Time API](https://worldtimeapi.org/api).
+On startup, the app loads the world time of the current default city of Berlin. This project makes use of the [Wolrd Time API](https://worldtimeapi.org/api) to accurately fetch it's data.
 
 ## Changing The Time
 
